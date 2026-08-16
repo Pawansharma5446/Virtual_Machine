@@ -16,3 +16,12 @@ provider "azurerm" {
     }
   }
 }
+
+terraform {
+  backend "azurerm" {
+    resource_group_name  = "backend_rg"
+    storage_account_name = "backendstorage01230123"
+    container_name       = "backendcontainer"
+    key                  = "three-tier.terraform.tfstate"
+  }
+}

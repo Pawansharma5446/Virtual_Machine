@@ -49,8 +49,7 @@ module "nic" {
     location = var.location
     resource_group_name = var.resource_group_name
     virtual_network_name = var.virtual_network_name
-    subnet_name = var.subnet_name    
-    public_ip_id = module.public_ip.public_ip_id
+    subnet_name = var.subnet_name
     network_security_group_id = module.nsg.nsg_id
 }
 
@@ -71,4 +70,13 @@ module "vm" {
     admin_username = var.admin_username
     admin_password = var.admin_password
     network_interface_id = module.nic.nic_id
+}
+
+module "azurerm_bastion" {
+    source = "../../module/azurerm_bastion"
+    bastion_name = var.bastion_name
+    location = var.location
+    resource_group_name = var.resource_group_name
+    subnet_id = module.subnet.subnet_id
+    public_ip_id = module.public_ip.public_ip_id
 }

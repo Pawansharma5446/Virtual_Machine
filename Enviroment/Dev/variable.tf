@@ -13,3 +13,8 @@ variable "vm_name" {}
 variable "vm_size" {}
 variable "admin_username" {}
 variable "admin_password" {}
+variable "bastion_name" {}
+# variable "location" {}
+# variable "resource_group_name" {}
+# variable "subnet_id" {}
+# variable "public_ip_id" {}
