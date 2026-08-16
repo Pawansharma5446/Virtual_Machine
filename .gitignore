@@ -1,0 +1,36 @@
+# Repo-wide .gitignore for Terraform project
+
+# Terraform
+.terraform/
+*.tfstate
+*.tfstate.*
+crash.log
+terraform.tfvars
+terraform.tfplan
+*.tfvars.json
+.terraform.lock.hcl
+
+# Sensitive keys
+*.pem
+*.key
+*.pfx
+
+# IDEs and OS
+.vscode/
+.idea/
+.DS_Store
+
+# Logs and backups
+*.log
+*.backup
+
+# Environment
+.env
+
+# Ignore local override files
+override.tf
+override.tf.json
+*_override.tf
+
+# Ignore plan output
+*.plan
